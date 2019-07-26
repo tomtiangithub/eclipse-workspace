@@ -1,0 +1,29 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: hsg-customer-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hsgdb?characterEncoding=UTF-8&useSSL=true
+    username: root
+    password: root
+mybatis:
+  mapperLocations: classpath:com/hti/mapper/*.xml
+  typeAliasesPackage: com.hti.entity
+logging:
+  level:
+    root: info
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

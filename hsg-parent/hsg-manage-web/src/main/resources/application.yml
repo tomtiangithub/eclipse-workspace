@@ -1,0 +1,8 @@
+server:
+  port: 8110
+spring:
+  application:
+    name: hsg-manage-web
+  thymeleaf:
+    cache: false
+    mode: html

@@ -1,0 +1,8 @@
+server:
+  port: 8210
+spring:
+  application:
+    name: hsg-customer-web
+  thymeleaf:
+    cache: false
+    mode: html

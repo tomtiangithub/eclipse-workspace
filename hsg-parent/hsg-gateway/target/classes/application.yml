@@ -1,0 +1,26 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: hsg-gateway
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+zuul:
+  routes:
+    book:
+      path: /customer/**
+      serviceId: hsg-customer-service
+    user:
+      path: /user/**
+      serviceId: hsg-user-service
